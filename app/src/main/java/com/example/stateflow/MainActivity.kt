@@ -24,10 +24,13 @@ class MainActivity : AppCompatActivity() {
 
          // TODO : STATE FLOW ( Equivalent of LiveData)
 
-        mainViewModel.loginCredentials(
-            binding.userName.text.toString(),
-            binding.userPassword.text.toString()
-        )
+
+        binding.login.setOnClickListener {
+            mainViewModel.loginCredentials(
+                binding.userName.text.toString(),
+                binding.userPassword.text.toString()
+            )
+        }
 
         lifecycleScope.launchWhenStarted {
             // launch this coroutine when activity is in start cycle
